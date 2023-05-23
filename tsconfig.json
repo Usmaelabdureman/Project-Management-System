@@ -20,7 +20,13 @@
       }
     ],
     "paths": {
-      "@/*": ["./*"]
+      "@/*": ["./*"],
+      "@/lib": ["./lib/*"],
+      "@/components": ["./components/*"],
+      "@/assets": ["./assets/*"],
+      "@/styles": ["./styles/*"],
+      "@/prisma/*": ["./prisma/*"],
+    "@/assets/*": ["./assets/*"]
     }
   },
   "include": ["next-env.d.ts", "**/*.ts", "**/*.tsx", ".next/types/**/*.ts"],

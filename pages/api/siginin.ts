@@ -3,14 +3,14 @@ import { db } from '@/lib/db'
 import { serialize } from 'cookie'
 import {NextApiRequest, NextApiResponse} from 'next'
 
-export default async function Signin(req: NextApiRequest, res: NextApiResponse) {
+export default async function signin(req: NextApiRequest, res: NextApiResponse) {
   if (req.method === 'POST') {
     const user = await db.user.findUnique({
       where: {
         email: req.body.email
       }
     })
-
+    
     const isUser = await comparePasswords(req.body.password, user?.password)
     
     if (isUser) {
